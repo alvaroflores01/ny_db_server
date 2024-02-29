@@ -1,12 +1,10 @@
 //Frameworks / Libraries
 const express = require('express');
 const dotenv = require('dotenv');
-const oracledb = require('oracledb');
-const dbconfig = require('./database/dbconfig.js');
+const db = require('./database/dbMethods.js')
 const cors = require('cors');
 
 //Database Requirements
-const dbtest = require('./database/dbtest.js');
 
 //Initialize Express
 const app = express();
@@ -19,6 +17,7 @@ dotenv.config();
 const port = 300;
 
 //DATABASE CONNECTION
+// const db = dbtest();
 
 // MIDDLEWARE
 //express json - allows express to read JSON code
@@ -37,7 +36,7 @@ app.get('/', (req, res) => {
 
 app.get('/testdb', async (req, res) => {
     try {
-        await dbtest();
+        await db.testConnection();
         res.send("SUCCESS: CONNECTED")
     } catch (err) {
         res.send(err.message);
@@ -45,8 +44,15 @@ app.get('/testdb', async (req, res) => {
     
 })
 
-//TEST DATABSE CONNECTION
+app.get('/testTable', async(req, res) => {
+    try {
+        result = await db.getTable('*', 'toycarorders');
+        res.send(result.rows);
+    } catch (err) {
+        res.send(err.message);
+    }
 
+})
 
 //LISTENING ON PORT
 app.listen(port, ()=> {
