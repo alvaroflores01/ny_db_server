@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "cis4301 group project backend express.js / oracle",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
