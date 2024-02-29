@@ -37,7 +37,7 @@ class db {
         try {
             let connection = await oracledb.getConnection(dbconfig);
             const result = await connection.execute(
-                `SELECT ${select} FROM ${tableName}x`);
+                `SELECT ${select} FROM ${tableName}`);
             connection.close();
             return result;
         } catch (err) {

@@ -6,18 +6,13 @@ const cors = require('cors');
 
 //Database Requirements
 
-//Initialize Express
+//Initialize Server
 const app = express();
+const port = process.env.CLIENT_URL;
 
 //Config Development Environment
 // process.env.VARIABLE_NAME to access your env variable.
 dotenv.config();
-
-
-const port = 300;
-
-//DATABASE CONNECTION
-// const db = dbtest();
 
 // MIDDLEWARE
 //express json - allows express to read JSON code
@@ -57,4 +52,5 @@ app.get('/testTable', async(req, res) => {
 //LISTENING ON PORT
 app.listen(port, ()=> {
     console.log(`Listening on ${port}`)
+    db.testConnection();
 })
