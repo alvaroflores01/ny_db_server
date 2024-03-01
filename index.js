@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const db = require('./database/dbMethods.js')
 const cors = require('cors');
 
-//Database Requirements
 
 //Initialize Server
 const app = express();
