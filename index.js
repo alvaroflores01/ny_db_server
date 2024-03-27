@@ -50,6 +50,6 @@ app.get('/testTable', async(req, res) => {
 
 //LISTENING ON PORT
 app.listen(port, ()=> {
-    console.log(`Listening on ${port}`)
+    console.log(`Listening on ${port} & accepting resquests from ${process.env.CLIENT_URL}`)
     db.testConnection();
 })
