@@ -37,8 +37,8 @@ class db {
         try {
             let connection = await oracledb.getConnection(dbconfig);
             const result = await connection.execute(
-                // `SELECT ${select} FROM "AFLORES39".${tableName}`
-                `SELECT * FROM "SAMUEL.CLARK".jobs`
+                `SELECT ${select} FROM "AFLORES39".${tableName}`
+                // `SELECT * FROM "SAMUEL.CLARK".jobs`
                 // `SELECT * FROM "SAMUEL.CLARK".jobs`
                 );
             console.log(result.rows.length); 
