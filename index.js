@@ -7,7 +7,7 @@ const cors = require('cors');
 
 //Initialize Server
 const app = express();
-const port = process.env.CLIENT_URL;
+const port = 8080;
 
 //Config Development Environment
 // process.env.VARIABLE_NAME to access your env variable.
@@ -40,7 +40,7 @@ app.get('/testdb', async (req, res) => {
 
 app.get('/testTable', async(req, res) => {
     try {
-        result = await db.getTable('*', 'toycarorders');
+        result = await db.getTable('*', 'totalPopulationByContinent');
         res.send(result.rows);
     } catch (err) {
         res.send(err.message);
