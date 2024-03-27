@@ -40,7 +40,7 @@ app.get('/testdb', async (req, res) => {
 
 app.get('/testTable', async(req, res) => {
     try {
-        result = await db.getTable('*', 'totalPopulationByContinent');
+        result = await db.getTable('*', 'economy');
         res.send(result.rows);
     } catch (err) {
         res.send(err.message);
