@@ -47,6 +47,51 @@ app.get('/testTable', async(req, res) => {
     }
 
 })
+app.get('/query0', async(req, res) => {
+    try {
+        result = await db.query(0);
+        res.send(result.rows);
+    } catch (err) {
+        res.send(err.message);
+    }
+
+})
+app.get('/query1', async(req, res) => {
+    try {
+        result = await db.query(1);
+        res.send(result.rows);
+    } catch (err) {
+        res.send(err.message);
+    }
+
+})
+app.get('/query2', async(req, res) => {
+    try {
+        result = await db.query(2);
+        res.send(result.rows);
+    } catch (err) {
+        res.send(err.message);
+    }
+
+})
+app.get('/query3', async(req, res) => {
+    try {
+        result = await db.query(3);
+        res.send(result.rows);
+    } catch (err) {
+        res.send(err.message);
+    }
+
+})
+app.get('/query4', async(req, res) => {
+    try {
+        result = await db.query(4);
+        res.send(result.rows);
+    } catch (err) {
+        res.send(err.message);
+    }
+
+})
 
 //LISTENING ON PORT
 app.listen(port, ()=> {
